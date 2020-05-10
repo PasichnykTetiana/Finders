@@ -3,15 +3,13 @@ function findElement(arr, func) {
     var num;
     var i;
     for(i=0; i<arr.length; i+=1){
-        num=arr[i];
-        // if(num % 2 === 0){
-        //     console.log(num)
-        // }
-        console.log(func);
+        console.log(func(arr[i]));
+        if(func(arr[i]) === true){
+            console.log(arr[i]);
+            return arr[i];
+        }
     }
-    return num;
-    //найти первый элемент что делится без остатка
+    // return num;
 }
 
-// findElement([1, 2, 3, 4], num => num % 2 === 0);
 findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; });
